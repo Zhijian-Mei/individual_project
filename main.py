@@ -20,10 +20,10 @@ df = pd.DataFrame()
 df['premise'] = validation_matched['premise']
 df['hypothesis'] = validation_matched['hypothesis']
 df['label'] = validation_matched['label']
-df.to_csv('data/validation_matched.csv',header=False)
+df.to_csv('data/validation_matched.csv',index=False)
 
 df = pd.DataFrame()
 df['premise'] = validation_mismatched['premise']
 df['hypothesis'] = validation_mismatched['hypothesis']
 df['label'] = validation_mismatched['label']
-df.to_csv('data/validation_mismatched.csv',header=False)
+df.to_csv('data/validation_mismatched.csv',index=False)
