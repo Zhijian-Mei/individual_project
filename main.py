@@ -3,7 +3,7 @@ from datasets import load_dataset
 dataset = load_dataset('multi_nli')
 
 def f(x):
-    return x['premise'],x['hypothesis']
+    return {'premise':x['premise'],'hypothesis':x['hypothesis']}
 
 
 validation_matched = dataset['validation_matched'].map(f,batched=True)
