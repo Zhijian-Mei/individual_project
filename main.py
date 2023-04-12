@@ -1,12 +1,12 @@
 from datasets import load_dataset
-
+from torch.utils.data import RandomSampler
 dataset = load_dataset('multi_nli')
 
-def f(x):
-    return {'premise':x['premise'],'hypothesis':x['hypothesis']}
 
 
-validation_matched = dataset['validation_matched'].map(f,batched=True)
-validation_mismatched = dataset['validation_mismatched'].map(lambda x:{'premise':x['premise'],'hypothesis':x['hypothesis']})
 
-print(validation_matched[0])
+validation_matched = dataset['validation_matched']
+validation_mismatched = dataset['validation_mismatched']
+
+print(validation_matched)
+print(RandomSampler(validation_mismatched,num_samples=2500))
