@@ -9,4 +9,4 @@ def f(x):
 validation_matched = dataset['validation_matched'].map(f,batched=True)
 validation_mismatched = dataset['validation_mismatched'].map(lambda x:{'premise':x['premise'],'hypothesis':x['hypothesis']})
 
-print(validation_matched)
+print(validation_matched[0])
