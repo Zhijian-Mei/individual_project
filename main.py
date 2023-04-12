@@ -14,7 +14,7 @@ torch.manual_seed(42)
 validation_matched = validation_matched[list(RandomSampler(validation_matched,num_samples=2500))]
 validation_mismatched = validation_mismatched[list(RandomSampler(validation_mismatched,num_samples=2500))]
 
-print(validation_matched[0])
+
 
 df = pd.DataFrame()
 df['premise'] = validation_matched['premise']
